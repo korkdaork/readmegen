@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = requirre("util");
+const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -57,34 +57,53 @@ function promptUser() {
 
 function generateTXT(answers) {
     return `
-    #${answers.name}
-    #${answers.project}
+    # ${answers.name}
+    
+    # ${answers.project}
+    
     ${answers.description}
-    ##Installation:
+    
+    ## Installation:
+    
     ${answers.install}
-    ##Getting Started/Usage
+    
+    ## Getting Started/Usage
+    
     ${answers.started}
-    ##Test(s)
+    
+    ## Test(s)
+    
     ${answers.test}
-    ##License(s)
+    
+    ## License(s)
+    
     ${answers.license}
-    ##Credits and Collaboration:
+    
+    ## Credits and Collaboration:
+    
     ${answers.credit}
-    ###A Quick Message:
+    
+    ### A Quick Message:
+    
     ${answers.message}
     `;
 }
 
 async function init() {
+
     console.log("Greetings");
+
     try {
         const answers = await promptUser();
 
         const txt = generateTXT(answers);
 
-        await writeFileAsync("test.md", txt);
+        await writeFileAsync(formats.md, './test.md', txt);
+
     } catch (err) {
+
         console.log(err);
+
     }
 };
 
