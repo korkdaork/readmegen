@@ -9,7 +9,12 @@ function promptUser() {
         {
             type: "input",
             name: "name",
-            message: "What is the project name?"
+            message: "What is your github name?"
+        },
+        {
+            type: "input",
+            name: "project",
+            message: "What is the project title?"
         },
         {
             type: "input",
@@ -33,6 +38,16 @@ function promptUser() {
         },
         {
             type: "input",
+            name: "license",
+            message: "List any and all licenses (if applicable)"
+        },
+        {
+            type: "input",
+            name: "test",
+            message: "What tests, if any, were conducted?"
+        },
+        {
+            type: "input",
             name: "message",
             message: "Any brief message you want to leave at the end of the readme file?"
         },
@@ -43,14 +58,19 @@ function promptUser() {
 function generateTXT(answers) {
     return `
     #${answers.name}
+    #${answers.project}
     ${answers.description}
     ##Installation:
     ${answers.install}
-    ##Getting Started
+    ##Getting Started/Usage
     ${answers.started}
+    ##Test(s)
+    ${answers.test}
+    ##License(s)
+    ${answers.license}
     ##Credits and Collaboration:
     ${answers.credit}
-    ##A Quick Message:
+    ###A Quick Message:
     ${answers.message}
     `;
 }
