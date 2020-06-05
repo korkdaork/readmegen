@@ -57,7 +57,7 @@ function promptUser() {
 
 function generateTXT(answers) {
     return `
-    # ${answers.name}
+    # ${answers.name}'s
     
     # ${answers.project}
     
@@ -98,7 +98,7 @@ async function init() {
 
         const txt = generateTXT(answers);
 
-        await writeFileAsync(formats.md, './test.md', txt);
+        await writeFileAsync("./README.md", txt);
 
     } catch (err) {
 
