@@ -57,36 +57,36 @@ function promptUser() {
 
 function generateTXT(answers) {
     return `
-    # ${answers.name}'s
+# ${answers.name}'s
     
-    # ${answers.project}
+# ${answers.project}
     
-    ${answers.description}
+${answers.description}
     
-    ## Installation:
+## Installation:
     
-    ${answers.install}
+${answers.install}
     
-    ## Getting Started/Usage
+## Getting Started/Usage
     
-    ${answers.started}
+${answers.started}
     
-    ## Test(s)
+## Test(s)
     
-    ${answers.test}
+${answers.test}
     
-    ## License(s)
+## License(s)
     
-    ${answers.license}
+${answers.license}
     
-    ## Credits and Collaboration:
+## Credits and Collaboration:
     
-    ${answers.credit}
+${answers.credit}
     
-    ### A Quick Message:
+### A Quick Message:
     
-    ${answers.message}
-    `;
+${answers.message}
+`;
 }
 
 async function init() {
